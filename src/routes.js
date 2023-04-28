@@ -5,6 +5,7 @@ const {
   getAllNotesHandler,
   getNoteByIdHandler,
   editNoteByIdHandler,
+  deleteNoteByIdHandler,
 } = require("./handler");
 
 /* eslint-disable linebreak-style */
@@ -28,6 +29,11 @@ const routes = [
     method: "PUT",
     path: "/notes/{id}",
     handler: editNoteByIdHandler,
+  },
+  {
+    method: "DELETE",
+    path: "/notes/{id}",
+    handler: deleteNoteByIdHandler,
   },
 ];
 
