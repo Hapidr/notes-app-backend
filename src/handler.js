@@ -4,7 +4,6 @@
 const { nanoid } = require("nanoid");
 const notes = require("./notes");
 
-// START
 // Menampilkan seluruh catatan
 const getAllNotesHandler = () => ({
   status: "success",
@@ -12,9 +11,7 @@ const getAllNotesHandler = () => ({
     notes,
   },
 });
-// END
 
-// START
 // Melihat detail dari catatan
 const getNoteByIdHandler = (request, h) => {
   const { id } = request.params;
@@ -37,9 +34,7 @@ const getNoteByIdHandler = (request, h) => {
   response.code(404);
   return response;
 };
-// END
 
-// START
 // Menambahkan catatan
 const addNoteHandler = (request, h) => {
   const { title, tags, body } = request.payload;
@@ -83,9 +78,7 @@ const addNoteHandler = (request, h) => {
   response.code(500);
   return response;
 };
-// END
 
-// START
 // Mengedit catatan
 const editNoteByIdHandler = (request, h) => {
   const { id } = request.params;
@@ -120,9 +113,7 @@ const editNoteByIdHandler = (request, h) => {
   response.code(404);
   return response;
 };
-// END
 
-// START
 // Menghapus catatan
 const deleteNoteByIdHandler = (request, h) => {
   const { id } = request.params;
@@ -148,7 +139,6 @@ const deleteNoteByIdHandler = (request, h) => {
   response.code(404);
   return response;
 };
-// END
 
 module.exports = {
   addNoteHandler,
